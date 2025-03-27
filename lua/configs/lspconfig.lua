@@ -3,8 +3,17 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
--- EXAMPLE
-local servers = { "html", "cssls" }
+-- This hooks up installed lsps to nvim. Note that this config does not handle the installation.
+-- It assumes that language servers listed here are already installed.
+-- Tools like mason provide a UI that helps manage installation as well.
+-- IMPORTANT: scala "metals" lsp is installed an managed through separate nvim-metals plugin
+local servers = {
+  "html",
+  "cssls",
+  "pyright",
+  "ts_ls",
+}
+
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
